@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "AddProduct";
+}
+
+<h2>AddProduct</h2>
+
+<div class=" alert alert-success" role="alert"> Product added : <b> @Model.Name </b></div>
+Product added <a href="@Url.Action("Index")"> Go to List</a>
+
+<form target=" @Url.Action("SaveProduct")" Method="POST">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Name</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Price</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>

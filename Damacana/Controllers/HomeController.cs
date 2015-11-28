@@ -37,6 +37,26 @@ namespace Damacana.Controllers
 
             return View( products);
         }
+        public ActionResult AddProduct()
+        {
+            //create an empty product
+            Product product = new Product()
+            {
+                Name = "",
+                Price = (decimal)6.4,
+            };
+
+
+            return View(product);
+        }
+
+       // [HttpPost]
+        public ActionResult SaveProduct(Product product)
+        {
+            
+
+            return View(product);
+        }
 
         public ActionResult About()
         {
