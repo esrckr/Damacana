@@ -1,4 +1,5 @@
 ﻿
+@model Damacana.Models.Product
 @{
     ViewBag.Title = "SaveProduct";
 }
@@ -6,6 +7,6 @@
 <h2>SaveProduct</h2>
 
 
-
-<div class=" alert alert-success" role="alert"> Product saved : <b> @Model.Name </b></div>
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{<div class=" alert alert-success" role="alert"> Product saved : <b> @Model.Name  @Model.Id @Model.Price </b></div>}
 Product saved<a href="@Url.Action("Index")"> Go to List</a>

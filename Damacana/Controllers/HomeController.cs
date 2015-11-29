@@ -11,60 +11,90 @@ namespace Damacana.Controllers
     
     public class HomeController : Controller
     {
+       static List<Product> products = new List<Product>();
+        Product product1 = new Product()
+        {   Id = 1,
+            Name = "Erikli 19L",
+            Price = (decimal)10.5 };
+
+        
         public ActionResult Index()
         {
             // crete an instance product
-            Product product1 = new Product();
-            
-                product1.Id = 1;
-                product1.Name = "Erikli 19L";
-                product1.Price = (decimal)10.5;
-            
-       
            
 
-           Product product2 = new Product();
+            products.Add(product1);
 
-            product2.Id = 2;
-            product2.Name = "Erikli 5L";
-            product2.Price = (decimal)5.5;
+            Product product2 = new Product();
 
+            product2.Id = 1;
+            product2.Name = "Pınar 19L";
+            product2.Price = (decimal)15.5;
 
             //send product to the view engine
-            List<Product> products = new List<Product>();
-            products.Add(product1);
-            products.Add(product2);
 
-            return View( products);
+          
+           
+            return View( products);  
         }
         public ActionResult AddProduct()
         {
             //create an empty product
-            Product product = new Product()
+           Product product = new Product()
             {
-                Name = "",
-                Price = (decimal)6.4,
+                Name ="asdsafdsf",
+               Price =(decimal)0,
+               Id =3
             };
-
-
+           products.Add(product);
             return View(product);
+
         }
 
-       // [HttpPost]
+       [HttpPost]
         public ActionResult SaveProduct(Product product)
         {
             
-
+            
             return View(product);
         }
 
-        public ActionResult About()
+      public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
 
             return View();
         }
 
+        public ActionResult EditProduct(Product product)
+        {
+    /*        ViewBag.Message = "Your application description page.";
+           Product product = new Product();
+           
+            foreach (var find in products)
+            {
+
+                if (find.Name == name)
+                {
+
+
+                    product.Name = find.Name;
+                    product.Price = find.Price;
+                    product.Id = find.Id;
+
+                }
+                else { continue; }
+            }
+           */
+            return View(product);
+        }
+        public ActionResult DeleteProduct()
+        {
+            ViewBag.Message = "Your application description page.";
+
+            return View();
+        }
+       
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
