@@ -23,7 +23,7 @@ namespace Damacana.Controllers
             // crete an instance product
            
 
-            products.Add(product1);
+         //  products.Add(product1);
 
             Product product2 = new Product();
 
@@ -40,13 +40,8 @@ namespace Damacana.Controllers
         public ActionResult AddProduct()
         {
             //create an empty product
-           Product product = new Product()
-            {
-                Name ="asdsafdsf",
-               Price =(decimal)0,
-               Id =3
-            };
-           products.Add(product);
+            Product product = new Product();
+           //products.Add(product);
             return View(product);
 
         }
@@ -54,8 +49,8 @@ namespace Damacana.Controllers
        [HttpPost]
         public ActionResult SaveProduct(Product product)
         {
-            
-            
+
+           products.Add(product);
             return View(product);
         }
 
@@ -66,33 +61,46 @@ namespace Damacana.Controllers
             return View();
         }
 
-        public ActionResult EditProduct(Product product)
+        public ActionResult EditProduct(string name)
         {
-    /*        ViewBag.Message = "Your application description page.";
-           Product product = new Product();
-           
+            //   products.Add(product);
+                 ViewBag.Message = "Your application description page.";
+                   Product product = new Product();
+
+                    foreach (var find in products)
+                    {
+
+                        if (find.Name == name)
+                        {
+
+
+                            product.Name = find.Name;
+                            product.Price = find.Price;
+                            product.Id = find.Id;
+                   
+                   
+                    products.Remove(find);
+                    break;
+                        }
+                    
+                    }
+                     return View(product);
+        }
+        [HttpGet]
+        public ActionResult DeleteProduct(string name)
+        {
+            ViewBag.Message = "Your application description page.";
             foreach (var find in products)
             {
 
                 if (find.Name == name)
                 {
-
-
-                    product.Name = find.Name;
-                    product.Price = find.Price;
-                    product.Id = find.Id;
-
+                    products.Remove(find);
+                    break;
                 }
-                else { continue; }
-            }
-           */
-            return View(product);
-        }
-        public ActionResult DeleteProduct()
-        {
-            ViewBag.Message = "Your application description page.";
 
-            return View();
+            }
+            return View(products);
         }
        
         public ActionResult Contact()

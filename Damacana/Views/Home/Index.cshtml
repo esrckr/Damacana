@@ -23,7 +23,7 @@
         </td>
         <td>
 
- <a href="@Url.Action("EditProduct")"> Edit</a>| <a href="@Url.Action("DeleteProduct")"> Delete </a>
+ <a href="@Url.Action("EditProduct", new { name = item.Name })"> Edit</a>| <a href="@Url.Action("DeleteProduct", new { name = item.Name })"> Delete </a>
             @Html.ActionLink("EditProduct", "Home", new { name = item.Name }) |
             
         </td>
