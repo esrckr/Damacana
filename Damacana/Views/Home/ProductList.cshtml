@@ -1,0 +1,31 @@
+﻿@using Damacana.Models;
+@model List<Damacana.Models.Product> 
+@{
+    ViewBag.Title = "ProductList";
+}
+
+<h2>ProductList</h2>
+
+
+@foreach (Product p in Model)
+{ @p.Name}
+
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            <h3>Product ID:  @Html.DisplayFor(modelItem => item.Id) </h3>
+            <h3> Product Name: @Html.DisplayFor(modelItem => item.Name)</h3>
+            <h3> Product Price: @Html.DisplayFor(modelItem => item.Price)</h3>
+            <h3> Purchase ID: @Html.DisplayFor(modelItem => item.PurchaseId)</h3>
+
+        </td>
+        <td>
+
+            <a href="@Url.Action("EditProduct", new { name = item.Name })"> Edit</a>| <a href="@Url.Action("DeleteProduct", new { name = item.Name })"> Delete </a>
+            @Html.ActionLink("EditProduct", "Home", new { name = item.Name }) |
+
+        </td>
+    </tr>
+}

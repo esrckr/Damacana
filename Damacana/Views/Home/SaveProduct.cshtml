@@ -7,6 +7,6 @@
 <h2>SaveProduct</h2>
 
 
-@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+@using (Html.BeginForm("ProductList", "Home", FormMethod.Post))
 {<div class=" alert alert-success" role="alert"> Product saved : <b> @Model.Name  @Model.Id @Model.Price </b></div>}
-Product saved<a href="@Url.Action("Index")"> Go to List</a>
+Product saved<a href="@Url.Action("ProductList")"> Go to List</a>

@@ -24,18 +24,18 @@ namespace Damacana.Controllers
            
 
          //  products.Add(product1);
-
-            Product product2 = new Product();
-
-            product2.Id = 1;
-            product2.Name = "Pınar 19L";
-            product2.Price = (decimal)15.5;
+         
 
             //send product to the view engine
 
           
            
             return View( products);  
+        }
+
+        public ActionResult ProductList()
+        {
+            return View(products);
         }
         public ActionResult AddProduct()
         {

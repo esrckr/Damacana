@@ -169,6 +169,7 @@
     <Content Include="Views\Home\SaveProduct.cshtml" />
     <Content Include="Views\Home\EditProduct.cshtml" />
     <Content Include="Views\Home\DeleteProduct.cshtml" />
+    <Content Include="Views\Home\ProductList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
