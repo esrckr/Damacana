@@ -4,29 +4,21 @@
     ViewBag.Title = "ProductList";
 }
 
-<h2>ProductList</h2>
+<p style='font-size:35px; color:lawngreen'>ProductList</p>
 
+<hr />
 
-@foreach (Product p in Model)
-{ @p.Name}
 
 
 @foreach (var item in Model)
-{ 
-    <tr>
-        <td>
-            <h3>Product ID:  @Html.DisplayFor(modelItem => item.Id) </h3>
-            <h3> Product Name: @Html.DisplayFor(modelItem => item.Name)</h3>
-            <h3> Product Price: @Html.DisplayFor(modelItem => item.Price)</h3>
-            <h3> Cart ID: @Html.DisplayFor(modelItem => item.CartId)</h3>
-            <h3> Purchase ID: @Html.DisplayFor(modelItem => item.PurchaseId)</h3>
-          
-        </td>
-        <td>
-
-            <a href="@Url.Action("AddtoCart", new { name = item.Name })"> ADD TO CART </a>|<a href="@Url.Action("EditProduct", new { name = item.Name })"> EDIT </a>| <a href="@Url.Action("DeleteProduct", new { name = item.Name })"> DELETE </a>
-          
-
-        </td>
-    </tr>
+{
+    <div style='; background-color: rgba(255, 255, 255,0.4)'>
+        <p   style='font-size:15px; '><b>Product ID:  @Html.DisplayFor(modelItem => item.Id)</b> </p>
+        <p  style='font-size:15px;'> Product Name: @Html.DisplayFor(modelItem => item.Name)</p>
+        <p  style='font-size:15px'; > Product Price: @Html.DisplayFor(modelItem => item.Price)</p>
+        <p  style='font-size:15px; '> Cart ID: @Html.DisplayFor(modelItem => item.CartId)</p>
+        <p  style='font-size:20px; color:lightpink'><a href="@Url.Action("AddtoCart", new { name = item.Name })"> ADD TO CART </a>|<a href="@Url.Action("EditProduct", new { name = item.Name })"> EDIT </a>| <a href="@Url.Action("DeleteProduct", new { name = item.Name })"> DELETE </a>
+ </p>
+           
+</div>
 }

@@ -11,21 +11,31 @@ namespace Damacana.Controllers
     
     public class HomeController : Controller
     {
+        int z = 3;
        static List<Product> products = new List<Product>();
        
         Product product1 = new Product()
         {   Id = 1,
             Name = "Erikli 19L",
             Price = (decimal)10.5 };
-        
 
-       static List<Cart> carts = new List<Cart>();
+
+        Product product2 = new Product()
+        {
+            Id = 2,
+            Name = "Pınar 19L",
+            Price = (decimal)9.5
+        };
+
+
+
+        static List<Cart> carts = new List<Cart>();
 
         Cart cart1 = new Cart()
         {
             Id = 1,
             UserId = 1,
-            Products = products
+          
         };
 
         static List<Purchase> purchases = new List<Purchase>();
@@ -34,14 +44,25 @@ namespace Damacana.Controllers
         {
             Id = 1,
             UserId = 1,
-           // CreatedOn=1,01,2000,
-            TotalPrice=0,
-            Products = products
+            CreatedOn=new DateTime(2015,04,25,22,10,55),
+            TotalPrice = 26,
+          
+        }; //background-image:url("http://i.hizliresim.com/ozB6r9.gif");
+        Purchase purchase2 = new Purchase()
+        {
+            Id = 2,
+            UserId = 1,
+            CreatedOn=new DateTime(2015,04,25,11,25,44),
+            TotalPrice = 45,
+             
         };
         public ActionResult Index()
         {
+            
             purchases.Add(purchase1);
+            purchases.Add(purchase2);
             products.Add(product1);
+            products.Add(product2);
             carts.Add(cart1);
             return View( products);  
         }
@@ -145,10 +166,10 @@ namespace Damacana.Controllers
                     product.Id = find.Id;
                     product.CartId = 1;
 
-                    products.Remove(find);
+                    products.Remove(find); products.Add(product);
                     break;
                 }
-
+               
             }
             return View(product);
         }
@@ -252,14 +273,19 @@ namespace Damacana.Controllers
 
         public ActionResult PurchaseList()
         {
+           
             return View(purchases);
         }
         
         public ActionResult AddPurchase(int id)
         {
             //create an empty cart
+            
             Purchase purchase = new Purchase();
-            ViewBag.Message = "Your application description page.";
+            {
+                purchase.CreatedOn = DateTime.Now;
+                purchase.Id = z; }
+            
             decimal k = 0;
 
             foreach (var find in products)
@@ -274,6 +300,8 @@ namespace Damacana.Controllers
          
             }
             purchase.TotalPrice = k;
+            purchases.Add(purchase);
+            
             return View(purchase);
          
            
@@ -282,10 +310,22 @@ namespace Damacana.Controllers
         [HttpPost]
         public ActionResult SavePurchase(Purchase purchase)
         {
+            
+            foreach (var find in products)
+            {
 
-            purchases.Add(purchase);
+                if (find.CartId !=0)
+                {
+
+                    find.CartId =0;
+
+                }
+
+            }
+            z++;
             return View(purchase);
         }
-       
+   
+
     }
 }

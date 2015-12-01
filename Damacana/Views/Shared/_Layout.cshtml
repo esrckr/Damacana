@@ -6,40 +6,45 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
+<body style=' background: #bee3ef;  background-size: 1300px 900px ;
+    background-repeat: no-repeat;'  >
+
+    <div class="navbar navbar-inverse navbar-fixed-top "  style='height: 70px; color : white; background-color: rgba(255, 0, 0, 0.4)' >
+        <div class="container"   >
+            <div class="navbar-header" style= 'font-size: 20px; align-self: center'>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Damacana", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <div><p></p></div>
+                @Html.ActionLink("Damacana", "Index", "Home", new { area = "" }, new { @class = "navbar-brand"  })
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("AddProduct", "AddProduct", "Home")</li>
-                    <li>@Html.ActionLink("AddCart", "AddCart", "Home")</li>
+            <div><p></p></div>
+            <div  style= 'font-size: 20px; align-self: center; height: 80px;' class="navbar-collapse collapse">
+                <ul   class="nav navbar-nav">
                     <li>@Html.ActionLink("ProductList", "ProductList", "Home")</li>
+                    <li>@Html.ActionLink("AddProduct", "AddProduct", "Home")</li>
                     <li>@Html.ActionLink("CartList", "CartList", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Edit", "EditProduct", "Home")</li>
-                    <li>@Html.ActionLink("Delete", "DeleteProduct", "Home")</li>
+                
                 </ul>
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    
+    <div class="container body-content navbar-fixed" style='margin-bottom: 60px;margin-top: 30px; background-color: rgba(102, 178, 255, 0.2)'>
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+        
+        
+        <div class="container body-content navbar-fixed-bottom">
+            <footer><hr />
+                <p style=' color: white'>&copy; @DateTime.Now.Year -<b> ESRA ÇAKIR </b></p>
+            </footer>
+            </div>
+        </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

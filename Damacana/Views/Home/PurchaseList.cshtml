@@ -4,23 +4,21 @@
     ViewBag.Title = "PuchaseList";
 }
 
-<h2>PuchaseList</h2>
+<p style='font-size:35px; color:lawngreen'>PurchaseList</p>
 
-@foreach (Purchase p in Model)
-{ @p.Id @p.CreatedOn @p.TotalPrice}
+<hr />
 
 
 @foreach (var item in Model)
 {
-    <tr>
-        <td>
-            <h3>Purchase ıd  @Html.DisplayFor(modelItem => item.Id) </h3>
-            <h3> tarih: @Html.DisplayFor(modelItem => item.CreatedOn)</h3>
-            <h3> total price : @Html.DisplayFor(modelItem => item.TotalPrice)</h3>
-           
+    <div style=' background-color: rgba(255, 255, 255,0.4)'>
+        <p style='font-size:15px; '><b>Purchase ıd : @Html.DisplayFor(modelItem => item.Id)</b> </p>
+        <p style='font-size:15px;'> Date: @Html.DisplayFor(modelItem => item.CreatedOn)</p>
+        <p style='font-size:15px;' > Total Price: @Html.DisplayFor(modelItem => item.TotalPrice)</p>
 
-        </td>
-        </tr>
+    </div>
 }
+
         <div class=" alert alert-success" role="alert"> <b> Success :) </b></div>
         you bought this cart !
+
