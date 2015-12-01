@@ -170,9 +170,23 @@
     <Content Include="Views\Home\EditProduct.cshtml" />
     <Content Include="Views\Home\DeleteProduct.cshtml" />
     <Content Include="Views\Home\ProductList.cshtml" />
+    <Content Include="Views\Home\AddtoCart.cshtml" />
+    <Content Include="Views\Home\AddCart.cshtml" />
+    <Content Include="Views\Home\SaveCart.cshtml" />
+    <Content Include="Views\Home\CartList.cshtml" />
+    <Content Include="Views\Home\ProductListofEachCart.cshtml" />
+    <Content Include="Views\Home\DeleteProductfromCart.cshtml" />
+    <Content Include="Views\Home\DeleteCart.cshtml" />
+    <Content Include="Views\Home\EditCart.cshtml" />
+    <Content Include="Views\Home\AddPurchase.cshtml" />
+    <Content Include="Views\Home\SavePurchase.cshtml" />
+    <Content Include="Views\Home\PurchaseList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Cart\" />
+    <Folder Include="Views\Product\" />
+    <Folder Include="Views\Purchase\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

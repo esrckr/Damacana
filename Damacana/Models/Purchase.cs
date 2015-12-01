@@ -9,7 +9,7 @@ namespace Damacana.Models
     {   public int Id { get; set; }
         public int UserId { get; set; }
         public DateTime CreatedOn { get; set; }
-        public decimal TotalPrice { get; set; }
+        public decimal TotalPrice { get; set; } = 0;
         public virtual ICollection<Product> Products { get; set; }
 
     }

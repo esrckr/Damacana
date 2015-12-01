@@ -21,6 +21,6 @@ namespace Damacana.Models
 
 
         public int CartId { get; set; }
-        public virtual Purchase Cart { get; set; }
+        public virtual Cart cart { get; set; }
     }
 }

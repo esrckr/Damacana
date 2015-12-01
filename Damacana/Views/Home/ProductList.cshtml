@@ -12,19 +12,20 @@
 
 
 @foreach (var item in Model)
-{
+{ 
     <tr>
         <td>
             <h3>Product ID:  @Html.DisplayFor(modelItem => item.Id) </h3>
             <h3> Product Name: @Html.DisplayFor(modelItem => item.Name)</h3>
             <h3> Product Price: @Html.DisplayFor(modelItem => item.Price)</h3>
+            <h3> Cart ID: @Html.DisplayFor(modelItem => item.CartId)</h3>
             <h3> Purchase ID: @Html.DisplayFor(modelItem => item.PurchaseId)</h3>
-
+          
         </td>
         <td>
 
-            <a href="@Url.Action("EditProduct", new { name = item.Name })"> Edit</a>| <a href="@Url.Action("DeleteProduct", new { name = item.Name })"> Delete </a>
-            @Html.ActionLink("EditProduct", "Home", new { name = item.Name }) |
+            <a href="@Url.Action("AddtoCart", new { name = item.Name })"> ADD TO CART </a>|<a href="@Url.Action("EditProduct", new { name = item.Name })"> EDIT </a>| <a href="@Url.Action("DeleteProduct", new { name = item.Name })"> DELETE </a>
+          
 
         </td>
     </tr>
